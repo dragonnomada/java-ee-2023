@@ -99,3 +99,7 @@ Duración: 40 hrs.
 - Creación de una clase Java para la interfaz remota
 - Creación y protección de la aplicación empresarial
 - Crear y ejecutar el cliente de la aplicación
+
+---
+
+<small>* *Este curso fue impartido para Banxico en Julio de 2023.*</small>
