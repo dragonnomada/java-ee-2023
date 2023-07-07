@@ -17,7 +17,7 @@ Duración: 40 hrs.
 
 > **Módulo 3: JavaBeans, anotaciones y logs**
 
-- Comprendiendo JvaBeans y anotaciones
+- Comprendiendo JavaBeans y anotaciones
 - Adición de un logger a una aplicación
 
 > **Módulo 4: Programación XML con JAXB**
