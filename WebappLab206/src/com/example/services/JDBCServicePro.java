@@ -20,8 +20,6 @@ Logger logger = Logger.getLogger(getClass().getName());
 	@Resource(lookup="jdbc/test")
 	DataSource dataSource;
 	
-	Connection connection;
-	
 	public String test() throws SQLException {
 		Connection connection = dataSource.getConnection();
 		
