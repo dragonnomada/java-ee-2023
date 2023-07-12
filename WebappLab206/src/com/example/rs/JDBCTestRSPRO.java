@@ -10,21 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.example.services.JDBCServiceLocal;
+import com.example.services.JDBCServicePro;
 
-@WebServlet(name = "jdbcTestLocal", urlPatterns = { "/jdbcTestLocal" })
-public class JDBCTestLocalRS extends HttpServlet {
+@WebServlet(name = "jdbcTestPro", urlPatterns = { "/jdbcTestPro" })
+public class JDBCTestRSPRO extends HttpServlet {
 
 	private static final long serialVersionUID = -5056581203052682927L;
 	
 	@Inject
-	JDBCServiceLocal jdbcService;
+	JDBCServicePro jdbcService;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setHeader("content-type", "text/plain");
 		try {
-			resp.getWriter().println("LOCAL");
 			resp.getWriter().println(jdbcService.test());
 		} catch (SQLException e) {
 			resp.getWriter().println(e.getMessage());
