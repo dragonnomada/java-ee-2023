@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 
 import javax.ejb.Stateless;
 
+@EnterpriseHello
 @Stateless
 public class EnterpriseHelloService implements HelloService {
 

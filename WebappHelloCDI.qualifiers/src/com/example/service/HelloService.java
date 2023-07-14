@@ -2,7 +2,7 @@ package com.example.service;
 
 import javax.ejb.Remote;
 
-@Remote
+//@Remote
 public interface HelloService {
 
 	int increment();
