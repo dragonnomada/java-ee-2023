@@ -26,14 +26,14 @@ public class SampleRest {
     @GET
     @Produces("text/plain") // MediaType.TEXT_PLAIN
     public String status() {
-        return "Ok - It is working..."
+        return "Ok - It is working...";
     }
 
     @GET
     @Produces("text/html") // MediaType.TEXT_HTML
     @Path("/html")
     public String sampleHTML() {
-        return "<h1 style='color:red;'>Hello sample HTML</h1>"
+        return "<h1 style='color:red;'>Hello sample HTML</h1>";
     }
 
     @GET
