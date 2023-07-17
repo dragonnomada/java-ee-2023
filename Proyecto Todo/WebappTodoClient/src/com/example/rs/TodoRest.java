@@ -12,6 +12,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
 import com.example.model.Todo;
+import com.example.service.JDBCTodo;
 import com.example.service.TodoService;
 
 @Path("/todos")
@@ -21,7 +22,14 @@ import com.example.service.TodoService;
 public class TodoRest {
 
 	@EJB
+	@JDBCTodo
 	TodoService todoService;
+	
+	@GET
+	@Path("/status")
+	public String status() {
+		return "ok";
+	}
 	
 	@GET
 	public List<Todo> getTodos() {
