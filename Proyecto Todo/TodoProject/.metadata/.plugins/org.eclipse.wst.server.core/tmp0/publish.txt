@@ -1,0 +1,3 @@
+#GlassFish 3
+#Mon Jul 17 15:23:20 CDT 2023
+org.eclipse.jst.jee.server\:EARprojTodo=D\:\\jee-workship\\glassfish4\\glassfish\\domains\\domain3\\eclipseApps\\EARprojTodo

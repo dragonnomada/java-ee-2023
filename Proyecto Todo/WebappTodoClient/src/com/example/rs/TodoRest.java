@@ -2,8 +2,8 @@ package com.example.rs;
 
 import java.util.List;
 
-import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -21,11 +21,12 @@ import com.example.service.TodoService;
 @RequestScoped
 public class TodoRest {
 
-	@EJB
+	@Inject
 	@JDBCTodo
 	TodoService todoService;
 	
 	@GET
+	@Produces("text/plain")
 	@Path("/status")
 	public String status() {
 		return "ok";

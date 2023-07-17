@@ -10,13 +10,15 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
 
+import javax.ejb.Stateless;
+
 import com.example.model.Todo;
 import com.example.service.JDBCTodo;
 import com.example.service.TodoService;
 import com.sun.xml.ws.developer.Stateful;
 
 @JDBCTodo
-@Stateful
+@Stateless
 public class JDBCTodoService implements TodoService {
 
 	Logger logger = Logger.getLogger("JDBCTodoService");
@@ -30,7 +32,7 @@ public class JDBCTodoService implements TodoService {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			logger.info("Realizando la conexión a la base de datos...");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jee_todos?useSSL=true", "root", "password");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jee_todos?useSSL=false", "root", "password");
 			
 			logger.info("Conectado a la base de datos <jee_todos>");
 		} catch (Exception e) {
@@ -64,8 +66,8 @@ public class JDBCTodoService implements TodoService {
 				long id = resultSet.getLong("id");
 				String title = resultSet.getString("title");
 				boolean checked = resultSet.getBoolean("checked");
-				Date created = resultSet.getDate("checked");
-				Date updated = resultSet.getDate("updated");
+				Date created = resultSet.getTimestamp("created");
+				Date updated = resultSet.getTimestamp("updated");
 				
 				Todo todo = new Todo();
 				todo.setId(id);

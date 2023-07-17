@@ -1,0 +1,71 @@
+package com.example.ejb;
+
+import java.util.Date;
+import java.util.List;
+
+import com.example.model.Todo;
+import com.example.service.TodoService;
+
+public class JDBCTodoService implements TodoService {
+
+	@Override
+	public Todo addTodo(String title) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Todo getTodo(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Todo> getTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Todo> getTodos(int limit) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Todo> getTodos(boolean isChecked) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Todo> getTodos(Date start, Date end) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Todo updateTodoTitle(long id, String title) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Todo checkTodo(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Todo uncheckTodo(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Todo deleteTodo(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

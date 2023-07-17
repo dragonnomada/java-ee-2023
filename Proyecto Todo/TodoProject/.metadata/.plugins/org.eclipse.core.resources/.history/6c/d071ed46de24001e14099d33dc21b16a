@@ -1,0 +1,52 @@
+package com.example.rs;
+
+import java.util.List;
+
+import javax.ejb.EJB;
+import javax.enterprise.context.RequestScoped;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+
+import com.example.model.Todo;
+import com.example.service.JDBCTodo;
+import com.example.service.TodoService;
+
+@Path("/todos")
+@Consumes("application/xml")
+@Produces("application/xml")
+@RequestScoped
+public class TodoRest {
+
+	@EJB
+	@JDBCTodo
+	TodoService todoService;
+	
+	@GET
+	@Produces("test/plain")
+	@Path("/status")
+	public String status() {
+		return "ok";
+	}
+	
+	@GET
+	public List<Todo> getTodos() {
+		return todoService.getTodos();
+	}
+	
+	@GET
+	@Path("/insecure/add")
+	public Todo addTodo(@QueryParam("title") String title) {
+		return todoService.addTodo(title);
+	}
+	
+	@POST
+	public Todo addTodo(Todo todo) {
+		String title = todo.getTitle();
+		return todoService.addTodo(title);
+	}
+	
+}

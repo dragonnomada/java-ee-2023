@@ -14,5 +14,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/EJBappTodoService"/>
+	<classpathentry kind="lib" path="D:/jee-workship/mysql-connector-j-8.0.32.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

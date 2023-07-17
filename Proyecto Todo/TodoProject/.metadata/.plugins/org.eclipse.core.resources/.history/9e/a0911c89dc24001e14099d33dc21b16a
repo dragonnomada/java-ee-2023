@@ -1,0 +1,127 @@
+package com.example.ejb;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.logging.Logger;
+
+import com.example.model.Todo;
+import com.example.service.JDBCTodo;
+import com.example.service.TodoService;
+import com.sun.xml.ws.developer.Stateful;
+
+@JDBCTodo
+@Stateful
+public class JDBCTodoService implements TodoService {
+
+	Logger logger = Logger.getLogger("JDBCTodoService");
+	
+	Connection connection;
+	
+	public JDBCTodoService() {
+		logger.info("Inicializando el servicio...");
+		try {
+			logger.info("Intentando recuperar el Driver de MySQL...");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			logger.info("Realizando la conexión a la base de datos...");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jee_todos?useSSL=true", "root", "password");
+			
+			logger.info("Conectado a la base de datos <jee_todos>");
+		} catch (Exception e) {
+			logger.warning("Error constructor: " + e.getMessage());
+		}
+	}
+	
+	@Override
+	public Todo addTodo(String title) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Todo getTodo(long id) {
+		return null;
+	}
+
+	@Override
+	public List<Todo> getTodos() {
+		String sql = "select * from todos";
+		
+		try {
+			PreparedStatement statement = connection.prepareStatement(sql);
+			
+			ResultSet resultSet = statement.executeQuery();
+			
+			List<Todo> todos = new ArrayList<>()
+			
+			while (resultSet.next()) {
+				long id = resultSet.getLong("id");
+				String title = resultSet.getString("title");
+				boolean checked = resultSet.getBoolean("checked");
+				Date created = resultSet.getDate("checked");
+				Date updated = resultSet.getDate("updated");
+				
+				Todo todo = new Todo();
+				todo.setId(id);
+				todo.setTitle(title);
+				todo.setChecked(checked);
+				todo.setCreated(created);
+				todo.setUpdated(updated);
+				
+				todos.add(todo);
+			}
+		} catch (SQLException e) {
+			logger.warning("Error getTodos(): " + e.getMessage());
+			return null;
+		}
+	}
+
+	@Override
+	public List<Todo> getTodos(int limit) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Todo> getTodos(boolean isChecked) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Todo> getTodos(Date start, Date end) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Todo updateTodoTitle(long id, String title) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Todo checkTodo(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Todo uncheckTodo(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Todo deleteTodo(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
