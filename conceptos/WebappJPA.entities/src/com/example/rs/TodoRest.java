@@ -13,6 +13,7 @@ import com.example.entity.Todo;
 import com.example.jpa.TodoService;
 
 @Path("/todo")
+@Produces("application/xml")
 @Stateless
 public class TodoRest {
 
@@ -20,7 +21,6 @@ public class TodoRest {
 	TodoService todoService;
 	
 	@GET
-	@Produces("application/xml")
 	public List<Todo> getTodos() {
 		return todoService.getTodos();
 	}

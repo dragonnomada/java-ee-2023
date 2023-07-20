@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -23,8 +25,10 @@ public class Todo {
 
 	private Boolean checked;
 
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date created;
 
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date updated;
 
 	@XmlAttribute
