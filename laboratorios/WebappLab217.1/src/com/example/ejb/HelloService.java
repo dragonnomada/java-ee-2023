@@ -12,6 +12,7 @@ public class HelloService {
 
 	int count = 0;
 
+	@PermitAll
 	public int getCount() {
 		return ++count;
 	}

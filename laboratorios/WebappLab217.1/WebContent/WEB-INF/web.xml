@@ -12,28 +12,28 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-	
 	<session-config>
 		<session-timeout>1</session-timeout>
 	</session-config>
 
-	<!-- <security-constraint>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>default</realm-name>
+	</login-config>
+
+	<!-- Recursos disponibles sólo para JEE_USER -->
+	<security-constraint>
+		<display-name>Restricted GET To JEE_USER</display-name>
 		<web-resource-collection>
-			<web-resource-name>Hello API</web-resource-name>
-			<url-pattern>/api/hello</url-pattern>
+			<web-resource-name>Restricted Access - Get Only</web-resource-name>
+			<url-pattern>/api/jee_user/*</url-pattern>
 			<http-method>GET</http-method>
 		</web-resource-collection>
 		<auth-constraint>
 			<role-name>JEE_USER</role-name>
 		</auth-constraint>
+		<user-data-constraint>
+			<transport-guarantee>NONE</transport-guarantee>
+		</user-data-constraint>
 	</security-constraint>
-
-	<login-config>
-		<auth-method>BASIC</auth-method>
-		<realm-name>file</realm-name>
-	</login-config>
-
-	<security-role>
-		<role-name>JEE_USER</role-name>
-	</security-role> -->
 </web-app>
