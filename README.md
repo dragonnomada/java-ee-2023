@@ -4,6 +4,10 @@ Instructor [Alan Badillo Salas](alan@nomadacode.com)
 
 Duración: 40 hrs.
 
+## ENCUESTA DE SATISFACCIÓN
+
+[https://forms.gle/qZUZvK5b4a7taUYC6](https://forms.gle/qZUZvK5b4a7taUYC6)
+
 ## Contenido
 
 > **Módulo 1: Plataforma Java, edición empresarial (Java EE)**
